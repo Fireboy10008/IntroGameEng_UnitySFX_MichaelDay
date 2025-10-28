@@ -2,15 +2,18 @@ using UnityEngine;
 
 public class TriggerSFX : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public AudioSource myAudioSource;
+    
+    void OnTriggerEnter(Collider other)
     {
-        
+        myAudioSource.Play();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerExit(Collider other)
     {
-        
+        myAudioSource.Pause();
     }
+
+
 }
+
